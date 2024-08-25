@@ -7,24 +7,28 @@ Make sure you take the following aspects into consideration:
     - Is `Enum` the best base class to use for `SupportedModels`? Are there other implementations that come to mind?
 """
 
-from enum import Enum
 import logging
-from sklearn.datasets import load_iris, fetch_california_housing
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, r2_score
-from sklearn.tree import DecisionTreeClassifier
+from enum import Enum
+
+from sklearn.datasets import fetch_california_housing, load_iris
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import accuracy_score, r2_score
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 
 class SupportedModels(Enum):
     """Supported machine learning models."""
+
     classifier = DecisionTreeClassifier
     regressor = LinearRegression
 
 
 class Model:
+    """Machine learning model class."""
 
     def __init__(self, model):
+        """Initialize a Model class instance."""
         self.model = model
 
     def calculate_metric(self, y_true, y_predicted):
