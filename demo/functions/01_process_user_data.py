@@ -38,27 +38,6 @@ class User:
         return f"User({str(self.__dict__)})"
 
 
-def validate_user_data(user: User) -> None:
-    """Check if user instance has birth of date set."""
-    if user.date_of_birth is None:
-        raise ValueError(f"Date of birth for {user} is not filled.")
-
-
-def is_user_active(user: User) -> bool:
-    """Check if user is active."""
-    if user.is_active:
-        return True
-    else:
-        return False
-
-
-def calculate_age(birth_day: int, birth_month: int, birth_year: int) -> int:
-    """Calculate age given a birthday day, month and year, respective to today's date."""
-    today = date.today()
-    age = today.year - birth_year - ((today.month, today.day) < (birth_month, birth_day))
-    return age
-
-
 def process_user_data(user: User) -> str:
     """Process user data."""
     validate_user_data(user)
@@ -78,6 +57,27 @@ def process_user_data(user: User) -> str:
         "age": age,
         "status": "Active"
     })
+
+
+def validate_user_data(user: User) -> None:
+    """Check if user instance has birth of date set."""
+    if user.date_of_birth is None:
+        raise ValueError(f"Date of birth for {user} is not filled.")
+
+
+def is_user_active(user: User) -> bool:
+    """Check if user is active."""
+    if user.is_active:
+        return True
+    else:
+        return False
+
+
+def calculate_age(birth_day: int, birth_month: int, birth_year: int) -> int:
+    """Calculate age given a birthday day, month and year, respective to today's date."""
+    today = date.today()
+    age = today.year - birth_year - ((today.month, today.day) < (birth_month, birth_day))
+    return age
 
 
 if __name__ == "__main__":
