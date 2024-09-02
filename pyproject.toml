@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "clean-code-python"
+version = "0.1.0"
+description = "Clean up your code, An exercise in Python"
+authors = ["Irena Grgic <irena.grgic11@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "exercises" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+azure-storage-blob = "^12.21.0"
+scikit-learn = "^1.5.1"
+matplotlib = "^3.9.0"
+seaborn = "^0.13.2"
+pandas = "^2.2.2"
+pydantic = "^2.8.2"
+
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.7"
+pre-commit = "^3.8.0"
+mypy = "^1.11.1"
+pandas-stubs = "^2.2.2.240807"
+
+
+
+[tool.ruff]
+src = ["exercises"]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",    # Pyflakes
+    "F",    # pycodestyle
+    "I",    # import sorting
+    "D",    # docstring conventions
+    "N",    # variable naming conventions
+    "W191", # Indentation contains tabs
+    "W291", # Trailing whitespace
+    "W292", # No newline at end of file
+    "W293", # whitespace format issues
+]
+
+ignore = [
+    "D203", # ignoring because conflicts with D211
+    "D213" # ignoring because conflicts with D212
+]
+
+[tool.mypy]
+strict = true
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
