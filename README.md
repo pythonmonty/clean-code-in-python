@@ -38,20 +38,25 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 > :exclamation: **Disclaimer:** The installation was tested only on Mac and Linux machines.
 
-1. Clone the repository and navigate into the directory:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/pythonmonty/clean-code-in-python.git
+   ```
+
+2. Navigate into the directory (if not already):
+
+   ```bash
    cd clean-code-in-python
    ```
 
-2. [Optional] Set Poetry to create the virtual environment in-project.
+3. [Optional] Set Poetry to create the virtual environment in-project.
 
    ```bash
    poetry config virtualenvs.in-project true
    ```
 
-3. Set a Python version for your Poetry environment. The Python version should be 3.9. or higher.
+4. Set a Python version for your Poetry environment. The Python version should be 3.9. or higher.
    If you are using `pyenv` to manage your Python versions, you can install a specific Python version,
    set it as the local version of the directory and configure Poetry to use it.
 
@@ -71,7 +76,13 @@ curl -sSL https://install.python-poetry.org | python3 -
    poetry env use /full/path/to/python
    ```
 
-4. Install the package dependencies and activate the environment:
+5. [Optional] To check if your Python executable has been set correctly, you can run:
+
+   ```bash
+   poetry env info
+   ```
+
+6. Install the package dependencies and activate the environment:
 
    ```bash
    poetry install
