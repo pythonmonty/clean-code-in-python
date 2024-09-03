@@ -52,14 +52,17 @@ curl -sSL https://install.python-poetry.org | python3 -
    ```
 
 3. Set a Python version for your Poetry environment. The Python version should be 3.9. or higher.
-   If you are using `pyenv` to manage your Python versions, you can install a specific Python version (here 3.11.9),
+   If you are using `pyenv` to manage your Python versions, you can install a specific Python version,
    set it as the local version of the directory and configure Poetry to use it.
 
    ```bash
-   pyenv install 3.11.9
-   pyenv local 3.11.9
+   pyenv install 3.11.8
+   pyenv local 3.11.8
    poetry env use $(pyenv which python)
    ```
+
+   > :memo: **Note:** As an example I picked Python 3.11.8, but if you cannot install that particular version on
+   > your machine, you can check which Python 3.11 versions are available by running `pyenv install --list | grep 3.11`.
 
    Alternatively, you can explicitly tell Poetry which Python version to use by passing the path to the Python
    executable:
