@@ -1,7 +1,9 @@
 """Exercise - Single Responsibility Principle.
 
+Focus on the class `Model` and refactor it.
+
 Make sure you take the following aspects into consideration:
-    - Does the class have a single responsibility, one reason to change?
+    - Does class `Model` have a single responsibility, one reason to change?
     - Are all names intention-revealing?
     - What assumptions are made for the type of the instance attribute `data`?
         - What consequence can this assumption have and how could you prevent it?
@@ -20,12 +22,12 @@ class Model:
         self.data = data
         self.model = None
 
-    def preprocess_data(self) -> None:
-        """Preprocess input data."""
-        self.data = (self.data - self.data.mean()) / self.data.std()
-
     def train(self) -> None:
         """Train linear regression model."""
+        # Preprocess data
+        self.data = (self.data - self.data.mean()) / self.data.std()
+
+        # Train model
         features = self.data.columns.difference(["target"])
         self.model = LinearRegression().fit(self.data[features], self.data["target"])
 
@@ -48,7 +50,6 @@ if __name__ == "__main__":
     input_data = pd.DataFrame(input_data)
 
     model = Model(input_data)
-    model.preprocess_data()
     model.train()
     mse = model.evaluate()
     print(f"MSE: {mse}")

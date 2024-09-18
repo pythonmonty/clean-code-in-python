@@ -1,5 +1,7 @@
 """Exercise - Liskov Substitution Principle and Dependency Inversion Principle.
 
+Focus on both class `Ellipse` and class `Circle`.
+
 Make sure you take the following aspects into consideration:
     - Does the current implementation violate the Dependency Inversion Principle?
         - If yes how would you change the Ellipse / Circle implementation to comply with the principle?

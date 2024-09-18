@@ -1,14 +1,16 @@
 """Exercise - One level of abstraction per function.
 
+Focus on the function `process_user_data` and refactor it. (However, feel free to refactor other functions
+if you find it necessary).
+
 Make sure you take the following aspects into consideration:
     - Does the naming of variables and functions reveal their intention? Do they contain any noise words?
     - Do the functions do only one thing?
     - Level of abstractions in the function(s).
-    - Are the functions ordered according to the decreasing level of abstraction?
+    - Are the functions ordered according to the decreasing level of abstraction (stepdown rule)?
 """
 
 from datetime import date
-from typing import Optional
 
 
 class User:
@@ -19,7 +21,7 @@ class User:
             first_name: str,
             last_name: str,
             is_active: bool,
-            date_of_birth: Optional[str] = None,
+            date_of_birth: str | None,
     ):
         """Initialize a User instance.
 

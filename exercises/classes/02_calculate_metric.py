@@ -1,5 +1,7 @@
 """Exercise - Open Closed Principle and Polymorphism.
 
+Focus on the class `Model` and refactor it.
+
 Make sure you take the following aspects into consideration:
     - Is class `Model` open for extension but closed for modification?
     - How can you prevent the `if isinstance` checks here and in similar cases?
