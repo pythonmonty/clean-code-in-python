@@ -9,7 +9,6 @@ Make sure you take the following aspects into consideration:
         - What consequence can this assumption have and how could you prevent it?
 """
 
-
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
