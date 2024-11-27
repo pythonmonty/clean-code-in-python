@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 class TrainingDataStandardizer:
     """Standardizer for training data."""
 
-    def __init__(self, data: pd.DataFrame):
+    def __init__(self, data: pd.DataFrame) -> None:
         """Instantiate a standardizer for training data."""
         self.data = data
 
@@ -20,7 +20,7 @@ class TrainingDataStandardizer:
 class LinearRegressionTrainer:
     """Linear Regression trainer class."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Instantiate an empty model."""
         self.model = None
 
