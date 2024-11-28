@@ -16,7 +16,7 @@ class Lottery:
         print("Draw lottery numbers.")
 
 
-def draw_a_painting(painter: Artist):
+def draw_a_painting(painter):
     """Draw a painting.
 
     This function purposefully has no type hints.

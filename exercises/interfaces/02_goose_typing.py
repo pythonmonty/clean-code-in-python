@@ -18,7 +18,7 @@ class Card(NamedTuple):
     rank: str
     suit: str
 
-
+# For virtual subsclassing use the 'register' decorator and class signature without inheritance
 #@abc.MutableSequence.register
 #class CardDeck:
 class CardDeck(abc.MutableSequence):

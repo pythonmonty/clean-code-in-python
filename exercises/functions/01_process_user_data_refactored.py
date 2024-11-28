@@ -12,7 +12,8 @@ class User:
     is_active: bool
     date_of_birth: date
 
-    # TODO: one option is to have this capitalization here
+    # You could think about removing the generate_capitalized_user_full_name function and capitalizing the
+    # first_name and last_name directly in the __post_init__ method.
     # def __post_init__(self):
     #     """Capitalizes the first and last name of a user instance."""
     #     self.first_name = self.first_name.capitalize()
