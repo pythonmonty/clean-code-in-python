@@ -62,7 +62,7 @@ def process_user_data(user: User) -> str:
 
 
 def validate_user_data(user: User) -> None:
-    """Check if user instance has birth of date set."""
+    """Check if user instance has date of birth set."""
     if user.date_of_birth is None:
         raise ValueError(f"Date of birth for {user} is not filled.")
 
